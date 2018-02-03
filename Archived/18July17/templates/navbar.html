@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='font-awesome-4.7.0/css/font-awesome.min.css') }}">
+
+
+
+    <!-- #ed5565 -->
+    <style type="text/css">
+    body,html{
+    height: 100%;
+  }
+
+  nav.sidebar, .main{
+    -webkit-transition: margin 200ms ease-out;
+      -moz-transition: margin 200ms ease-out;
+      -o-transition: margin 200ms ease-out;
+      transition: margin 200ms ease-out;
+  }
+
+  .main{
+    padding: 10px 10px 0 10px;
+  }
+
+ @media (min-width: 765px) {
+
+.main{
+      position: absolute;
+      width: calc(100% - 40px);
+      margin-left: 40px;
+      float: right;
+    }
+
+    nav.sidebar:hover + .main{
+      margin-left: 200px;
+    }
+
+    nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+      margin-left: 0px;
+    }
+
+    nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+      text-align: center;
+      width: 100%;
+      margin-left: 0px;
+    }
+
+    nav.sidebar a{
+      padding-right: 13px;
+    }
+
+    nav.sidebar .navbar-nav > li:first-child{
+      border-top: 1px #e5e5e5 solid;
+    }
+
+    nav.sidebar .navbar-nav > li{
+      border-bottom: 1px #e5e5e5 solid;
+    }
+
+    nav.sidebar .navbar-nav .open .dropdown-menu {
+      position: static;
+      float: none;
+      width: auto;
+      margin-top: 0;
+      background-color: transparent;
+      border: 0;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+      padding: 0 0px 0 0px;
+    }
+
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+      color: #777;
+    }
+
+    nav.sidebar{
+      width: 200px;
+      height: 100%;
+      margin-left: -160px;
+      float: left;
+      margin-bottom: 0px;
+    }
+
+    nav.sidebar li {
+      width: 100%;
+    }
+
+    nav.sidebar:hover{
+      margin-left: 0px;
+    }
+
+    .forAnimate{
+      opacity: 0;
+    }
+    #navvbbar{
+    position:absolute;
+    }
+  }
+
+  @media (min-width: 1330px) {
+
+    .main{
+      width: calc(100% - 200px);
+      margin-left: 200px;
+    }
+
+    nav.sidebar{
+      margin-left: 0px;
+      float: left;
+    }
+
+    nav.sidebar .forAnimate{
+      opacity: 1;
+    }
+     #navvbbar{
+    position:fixed;
+    }
+  }
+
+  nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+    color: #CCC;
+    background-color: transparent;
+  }
+
+  nav:hover .forAnimate{
+    opacity: 1;
+  }
+  section{
+    padding-left: 15px;
+  }
+
+ div.circle-avtar{
+/* make it responsive */
+max-width: 100%;
+width:100%;
+height:auto;
+display:block;
+padding-top:100%;
+border-radius:50%;
+background-position-y: center;
+background-position-x: center;
+background-repeat: no-repeat;
+background-size: cover;
+margin: 0 auto;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.company_logo{
+padding:20px 20px 20px 33px;
+ border-style: solid;
+background-color:#FFFFFF;
+border-width:10px;
+border-color:#A1CAF1;
+}
+
+.user_info{
+border-style: solid;
+background-color:#FFFFFF;
+border-width:10px;
+border-color:#A1CAF1;
+}
+
+.icon-bar{
+color:#FFFFFF;
+background-color:#FFFFFF;
+}
+
+#pickfrom {
+    z-index: 100000;
+}
+#pickto {
+    z-index: 100000;
+}
+
+    </style>
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <nav class="navbar navbar-primary sidebar" id="navvbbar" role="navigation" style="background-color:#A1CAF1;z-index:100000;">
+    <div class="container-fluid" style="background-color:#A1CAF1;" >
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+        <div class="company_logo">
+               <center>
+
+                        <img src="{{ url_for('static', filename='images/logo.png') }}" class="img-responsive">
+
+               </center>
+         </div>
+               <hr style="margin:0px;">
+        <div class="user_info">
+      	        <div class="col-sm-3 col-xs-3 circle-avtar" style="background-image:url({{ url_for('static', filename='images/'+(data_t[0].lower()).split()[0]+'.jpg') }})">
+
+				</div>
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						{{data_t[0].upper()}}
+					</div>
+					<div class="profile-usertitle-job">
+						{{data_t[1].upper()}}
+					</div>
+                </div>
+        </div>
+         <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Attendence <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
+          <ul class="dropdown-menu forAnimate" role="menu">
+            <li><a href='{{url_for("view")}}'>View Attendence <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-bookmark"></span>  </a></li>
+            <li class="divider"></li>
+              <li><a href='#' data-target="#editModal" data-toggle="modal">Request for Leave  <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span> </a></li>
+           </ul>
+        </li>
+         {% if data_t[1]== "HR" %}
+             <li class="dropdown">
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin\HR Panel <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-lock"></span></a>
+          <ul class="dropdown-menu forAnimate" role="menu">
+            <li><a href='{{url_for("admin_att")}}'>Collective Attendence<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-eye-open"></span>  </a></li>
+            <li class="divider"></li>
+              <li><a href='#' data-target="#adminModal" data-toggle="modal">Edit Attendence  <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span> </a></li>
+            <li class="divider"></li>
+              <li><a href='{{url_for("newemployee")}}'>Register Employee  <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span> </a></li>
+           </ul>
+             </li>
+
+
+         {%endif%}
+        <li ><a href='{{url_for("logout")}}'>Logout<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+      </ul>
+
+
+
+    </div>
+  </div>
+</nav>
+
+  <div id='editModal' class="modal fade" role="dialog">
+   <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+          <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit Attendence</h4>
+          </div>
+         <div class="modal-body" style="text-align:center;">
+
+              <form method="POST" action="{{url_for('index')}}">
+                  <div class="row">
+                      <!-- #First -->
+                      <div class="form-group">
+                           <div class="col-md-5 col-md-offset-1 inputGroupContainer">
+                               <div class="input-group">
+                                              <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                              <input type="text" class="form-control" id="pickfrom" placeholder="From" style="width:80%" name="from" value="{{request.form.tfrom}}">
+
+                                </div>
+                           </div>
+                           <div class="col-md-6 inputGroupContainer">
+                                <div class="form-group">
+                            <button type="submit" class="btn btn-primary" style="width:60%;" name="Leave"><span class="pull-left fa fa-wheelchair-alt"> </span>Leave </button>
+                                </div>
+
+                           </div>
+
+
+                      </div>
+
+                      <!-- #Second -->
+                      <div class="form-group">
+                           <div class="col-md-5 col-md-offset-1 inputGroupContainer">
+                               <div class="input-group">
+                                              <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                              <input type="text" class="form-control" id="pickto" placeholder="To" style="width:80%" name="to" value="{{request.form.tto}}">
+
+                                </div>
+
+                           </div>
+                           <div class="col-md-6 inputGroupContainer">
+                           <div class="form-group">
+                            <button type="submit" class="btn btn-primary" style="width:60%;" name="Optional_Holiday"><span class="pull-left fa fa-smile-o"> </span> Optional Holiday </button>
+                             </div>
+                           </div>
+
+
+                      </div>
+
+                     <!-- #Third -->
+                      <div class="form-group">
+                           <div class="col-md-5 col-md-offset-1 inputGroupContainer">
+                                <p class="text-success pull-left" id="date_ext"></p>
+                           </div>
+                           <div class="col-md-6 inputGroupContainer">
+                           <div class="form-group">
+                             <button type="submit" class="btn btn-primary" style="width:60%;" name="Work_From_Home"><span class="pull-left fa fa-laptop"> </span>Work from home </button>
+                             </div>
+                           </div>
+                      </div>
+
+                  </div>
+              </form>
+
+         </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </div>
+      </div>
+   </div>
+</div>
+
+   {%if session["type"]=="HR" or session["type"]=="Admin"%}
+            <div id='adminModal' class="modal fade" role="dialog" style="z-index:1000000px;">
+   <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+          <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit Attendence</h4>
+          </div>
+         <div class="modal-body" style="text-align:center;">
+
+              <form method="POST" action="{{url_for('index')}}">
+
+                      <!-- #First -->
+                      <div class="form-group">
+                           <div class="col-md-4 col-md-offset-1 inputGroupContainer">
+                               <div class="input-group">
+                                   <span class="input-group-addon"> <i class="fa fa-comments" aria-hidden="true"></i>
+                                       </span>
+                                    <select class="form-control selectpicker" name="comment" id="comment">
+                                        <option>
+                                            Leave
+                                        </option>
+                                        <option>
+                                            Work From Home
+                                        </option>
+                                        <option>
+                                            Holiday
+                                        </option>
+                                        <option>
+                                            Optional Holiday
+                                        </option>
+                                        <option>
+                                            Correct Attendence
+                                        </option>
+                                    </select>
+                                </div>
+                           </div>
+                           <div class="col-md-4 col-md-offset-1 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"> <i class="fa fa-user" aria-hidden="true"></i>
+                                       </span>
+                                    <select class="form-control selectpicker" name="emp_name" id="emp_name">
+                                             <option>--Select Employee--</option>
+                                        {%for l in data_t[3]%}
+                                             <option>{{l[0]+"/"+l[1]}}</option>
+                                        {%endfor%}
+                                    </select>
+                                    <input type="hidden" name="emp_id">
+                                </div>
+
+                           </div>
+                           <br><br>
+                          <div class="form-group" id="ttime">
+
+                               <div class="col-md-4 col-md-offset-0 inputGroupContainer">
+                                   <div class="input-group">
+                                        <span class="input-group-addon"> <i class="fa fa-calendar" aria-hidden="true"></i>
+                                       </span>
+                                          <input type="text" class="form-control" placeholder="Date" name="edit_date">
+                                    </div>
+                               </div>
+                               <div class="col-md-4 col-md-offset-0 inputGroupContainer">
+                                   <div class="input-group">
+                                       <span class="input-group-addon"> <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                       </span>
+                                          <input type="text" class="form-control" placeholder="Walkin" name="walkin">
+                                    </div>
+                               </div>
+                               <div class="col-md-4 col-md-offset-0 inputGroupContainer">
+                                   <div class="input-group">
+                                        <span class="input-group-addon"> <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                       </span>
+                                          <input type="text" class="form-control" placeholder="Walkout" name="walkout">
+                                    </div>
+                               </div>
+                          </div>
+                           <div class="form-group" id="ddate">
+                               <div class="col-md-4 col-md-offset-1 inputGroupContainer">
+                                   <div class="input-group">
+                                       <span class="input-group-addon"> <i class="fa fa-calendar" aria-hidden="true"></i>
+                                       </span>
+                                          <input type="text" class="form-control" placeholder="From" name="frm">
+                                    </div>
+                               </div>
+                               <div class="col-md-4 col-md-offset-1 inputGroupContainer">
+                                   <div class="input-group">
+                                        <span class="input-group-addon"> <i class="fa fa-calendar" aria-hidden="true"></i>
+                                       </span>
+                                          <input type="text" class="form-control" placeholder="To" name="to">
+                                    </div>
+                               </div>
+                          </div>
+
+                      </div>
+               <div class="row"></div> <br>
+
+
+                  <center><button type="submit" class="btn btn-primary btn-md" name="admin_att_edit"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Submit</button></center>
+
+              </form>
+
+         </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </div>
+      </div>
+   </div>
+</div>
+          {%endif%}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+
+$("#ddate").hide();
+$("#ttime").hide();
+
+$(document).on('change','#comment',function(){
+               var c=$("#comment").val()
+               if(c=="Correct Attendence"){
+                     $("#ddate").hide();
+                     $("#ttime").show();
+               }
+               else{
+
+                     $("#ddate").show();
+                     $("#ttime").hide();
+               }
+          });
+
+$(document).on('change','#emp_name',function(){
+      var c=$("#emp_name").val();
+      arr=c.split("/");
+      $("#emp_id").val(arr[0]);
+
+});
+
+ $( function() {
+    $( "#pickfrom" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+
+      dateFormat:'dd/mm/yy'
+    });
+  } );
+
+   $( function() {
+    $( "#pickto" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+
+      dateFormat:'dd/mm/yy'
+
+    });
+  } );
+var d1;
+var flag1=0;
+var flag2=0;
+ $('#pickfrom').datepicker({
+    onSelect: function(dateText, inst) {
+      d1=dateText;
+      flag1=1;
+      write_date()
+    }
+})
+var d2;
+ $('#pickto').datepicker({
+    onSelect: function(dateText, inst) {
+      d2=dateText;
+      flag2=1;
+      write_date()
+
+    }
+})
+function write_date(){
+
+if(flag1==1 && flag2==1){
+        d1_list=d1.split("/");
+        d2_list=d2.split("/");
+
+        var oneDay = 24*60*60*1000;	// hours*minutes*seconds*milliseconds
+        var  secondDate= new Date(d1_list[2],d1_list[0],d1_list[1]);
+        var firstDate = new Date(d2_list[2],d2_list[0],d2_list[1]);
+        var diffDays = ((firstDate.getTime() - secondDate.getTime())/(oneDay)+1);
+        if(diffDays>0)
+                     $("#date_ext").html("<span class='glyphicon glyphicon-ok'> </span> Leave for "+diffDays+" days");
+        else
+                     $("#date_ext").html("<p class='text-danger'> <span class='glyphicon glyphicon-remove'> </span> Invalid Range</p>");
+}
+
+else{
+    $("#date_ext").html("<p class='text-danger'><span class='glyphicon glyphicon-remove'> </span> Invalid Range</p>");
+}
+
+}
+</script>
+</body>
+</html>

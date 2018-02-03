@@ -1,0 +1,185 @@
+{%include 'navbar.html'%}
+
+
+{%if to=="" and frm==""%}
+
+ <script type = "text/javascript">
+    $(document).ready(function(){
+
+      $('#myModal').modal('show');
+
+    });
+
+
+</script>
+
+
+{%endif%}
+
+  <style>
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #A1CAF1; // Choose your own color here
+ }
+ .table-striped>tbody>tr:nth-child(even)>td,
+.table-striped>tbody>tr:nth-child(even)>th {
+   background-color: #FFFFFF; // Choose your own color here
+ }
+
+ #datepicker {
+    z-index: 100000;
+}
+ #topp {
+    z-index: 100000;
+}
+ #frompp {
+    z-index: 100000;
+}
+ </style>
+
+</head>
+
+<?php
+include 'head_info.php';
+include 'sidebar.php';
+include 'sqlconnect.php';
+
+?>
+
+<div id='myModal' class="modal fade" role="dialog">
+   <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+
+         <div class="modal-body" style="text-align:center;">
+            <div class="row">
+              <form method="POST" action="">
+               <table class="table table-striped">
+
+                  <tr>
+                     <td colspan=3>
+                        <center><img class="img-responsive" src='{{url_for("static",filename="images/logo.png")}}' height=15% width=40%></center>
+                     </td>
+                  </tr>
+                   {%if msg%}
+                   <tr>
+                     <td colspan=3>
+                         <p class="text-danger">{{msg}}<i class="fa fa-meh-o" aria-hidden="true"></i></p>
+
+                     </td>
+                  </tr>
+                   {%endif%}
+                     <tr>
+                     <td>
+                     </td>
+                     <td>
+                        <center>
+                           <div class="input-group">
+                              <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                              <input type="text" class="form-control" id="frompp" placeholder="From" style="width:50%" name="from" value="{{request.form.from}}">
+
+                           </div>
+                        </center>
+                     </td>
+
+                        <td>
+                        <center>
+                           <div class="pull-right input-group">
+                              <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                              <input type="text" class="form-control" id="topp" placeholder="To" style="width:50%" name="to" value="{{request.form.to}}">
+
+                           </div>
+                        </center>
+                     </td>
+
+                  </tr>
+                  <tr>
+                     <!-- <td><a href="#" class="btn btn-primary"> <i class="fa fa-unlock-alt" aria-hidden="true"></i> Change Password</a></td> -->
+                     <td colspan="3">
+                        <center>
+                        <div class="input-group">
+
+
+                        <input type="submit" class="btn btn-primary" value="Get Details" name="empatt">
+
+                         </div>
+                        </center>
+                     </td>
+                  </tr>
+               </table>
+              </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="container" style="background-color: #FFFFFF;padding:20px;border-style: solid;border-width:10px;border-color:#A1CAF1;">
+<center>
+    <button class="btn btn-primary" data-target="#myModal" data-toggle="modal" >
+        <span class="glyphicon glyphicon-list">
+
+        </span> Attendence Detail
+    </button>
+</center>
+    <br> <br>
+ <table class="table table-striped" style="border-style: solid;border-width:10px;border-color:#A1CAF1;">
+  <tr>
+
+
+    <th><span class="glyphicon glyphicon-calendar"></span> Date </th>
+    <th><span class="glyphicon glyphicon-time"></span>  Walk-In Time </th>
+    <th> <span class="glyphicon glyphicon-time"></span>  Walk- Out Time </th>
+
+    </tr>
+
+    {%if d%}
+      {%for i in d%}
+          <tr>
+              <td style="font-size:1em;font-weight:bold;">{{i}} </td>
+              {%if d[i][0]=="Not Marked"%}
+                    <td style="color:red;"> {{d[i][0]}} </td>
+                    <td style="color:red;"> {{d[i][0]}} </td>
+
+              {%elif d[i][0]!="Regular"%}
+                    <td style="color:green;"> {{d[i][0]}} </td>
+                    <td style="color:green;"> {{d[i][0]}} </td>
+              {%else%}
+                   <td> {{d[i][1]}} </td>
+                   <td> {{d[i][2]}} </td>
+              {%endif%}
+          </tr>
+      {%endfor%}
+    {%endif%}
+</table>
+</div>
+
+<script type="text/javascript">
+
+
+         $( function() {
+    $( "#frompp" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      defaultDate: "-5w",
+      dateFormat:'yy-mm-dd'
+    });
+  } );
+
+             $( function() {
+    $( "#topp" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+
+      dateFormat:'yy-mm-dd'
+    });
+  } );
+
+
+</script>
+
+
+
+
+
+

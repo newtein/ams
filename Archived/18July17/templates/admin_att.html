@@ -1,0 +1,215 @@
+{%include 'navbar.html'%}
+
+
+{%if to=="" and frm==""%}
+
+ <script type = "text/javascript">
+    $(document).ready(function(){
+
+      $('#myModal').modal('show');
+
+    });
+
+
+</script>
+
+
+{%endif%}
+
+  <style>
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #A1CAF1; // Choose your own color here
+ }
+ .table-striped>tbody>tr:nth-child(even)>td,
+.table-striped>tbody>tr:nth-child(even)>th {
+   background-color: #FFFFFF; // Choose your own color here
+ }
+
+ #datepicker {
+    z-index: 100000;
+}
+ #toaa {
+    z-index: 100000;
+}
+ #fromaa {
+    z-index: 100000;
+}
+ </style>
+
+</head>
+
+<?php
+include 'head_info.php';
+include 'sidebar.php';
+include 'sqlconnect.php';
+
+?>
+
+<div id='myModal' class="modal fade" role="dialog">
+   <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+
+         <div class="modal-body" style="text-align:center;">
+            <div class="row">
+              <form method="POST" action="">
+               <table class="table table-striped">
+
+                  <tr>
+                     <td colspan=3>
+                        <center><img class="img-responsive" src='{{url_for("static",filename="images/logo.png")}}' height=15% width=40%></center>
+                     </td>
+                  </tr>
+
+                     <tr>
+                     <td>
+                     </td>
+                     <td>
+                        <center>
+                           <div class="input-group">
+                              <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                              <input type="text" class="form-control" id="fromaa" placeholder="From" style="width:50%" name="adminfrom" value="{{request.form.from}}">
+
+                           </div>
+                        </center>
+                     </td>
+
+                        <td>
+                        <center>
+                           <div class="pull-right input-group">
+                              <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                              <input type="text" class="form-control" id="toaa" placeholder="To" style="width:50%" name="adminto" value="{{request.form.to}}">
+
+                           </div>
+                        </center>
+                     </td>
+
+                  </tr>
+                  <tr>
+                     <!-- <td><a href="#" class="btn btn-primary"> <i class="fa fa-unlock-alt" aria-hidden="true"></i> Change Password</a></td> -->
+                     <td colspan="3">
+                        <center>
+                        <div class="input-group">
+
+                        <input type="submit" class="btn btn-primary" value="Get Details" name="empatt">
+
+                         </div>
+                        </center>
+                     </td>
+                  </tr>
+               </table>
+              </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="container-fluid" style="margin:4%;margin-top:0px;background-color: #FFFFFF;padding:10px;border-style: solid;border-width:10px;border-color:#A1CAF1;">
+<center> <button class="btn btn-primary" data-target="#myModal" data-toggle="modal" style="margin-top:0px;margin-bottom:0px;"><span class="glyphicon glyphicon-list"></span> Attendence Detail </button></center> <br> <br>
+ {%if d%}
+    {%if path%}
+    <center>
+        <a href="{{ path}}" class="btn btn-primary btn-md" download style="margin-top:0px;margin-bottom:0px;">
+            <i class="fa fa-download" aria-hidden="true"></i>
+                      Download
+        </a>
+    </center><br>
+    {%endif%}
+    <table class="table table-striped" style="border-style: solid;border-width:10px;border-color:#A1CAF1;">
+  <tr>
+
+
+
+
+
+    <th ><span class="glyphicon glyphicon-calendar"></span> Date </th>
+     <th><span class="glyphicon glyphicon-smile-o"></span> </th>
+     {%for l in d.values()[0] %}
+          <th><span class="glyphicon glyphicon-user"></span> {{l[1]}}</th>
+      {%endfor%}
+
+
+    </tr>
+
+
+
+              {%for date in d%}
+
+                <tr>
+                    <td style="font-weight:bold;">{{date}}</td>
+                    <td>WalkIn</td>
+
+                     {%for ids in d[date]%}
+                        {%if d[date][ids][0][0]=="Not Marked"%}
+                                <td style="color:red">{{d[date][ids][0][0]}}</td>
+                        {%elif d[date][ids][0][0]!="Regular"%}
+                               <td style="color:green">{{d[date][ids][0][0]}}</td>
+                         {%else%}
+                                <td style="color:black">
+                                    {{d[date][ids][0][1]}}
+
+                                </td>
+
+                        {%endif%}
+                     {%endfor%}
+                </tr>
+                  <tr>
+                    <td style="font-weight:bold;">{{date}}</td>
+                      <td>WalkOut</td>
+
+                     {%for ids in d[date]%}
+                        {%if d[date][ids][0][0]=="Not Marked"%}
+                                <td style="color:red">{{d[date][ids][0][0]}}</td>
+                        {%elif d[date][ids][0][0]!="Regular"%}
+                               <td style="color:green">{{d[date][ids][0][0]}}</td>
+                         {%else%}
+                                <td style="color:black">
+
+                                    {{d[date][ids][0][2]}}
+                                </td>
+
+                        {%endif%}
+                     {%endfor%}
+                </tr> 
+
+
+
+
+
+              {%endfor%}
+
+     {%endif%}
+</table>
+</div>
+
+<script type="text/javascript">
+
+
+         $( function() {
+    $( "#fromaa" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      defaultDate: "-5w",
+      dateFormat:'yy-mm-dd'
+    });
+  } );
+
+             $( function() {
+    $( "#toaa" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+
+      dateFormat:'yy-mm-dd'
+    });
+  } );
+
+
+</script>
+
+
+
+
+
+

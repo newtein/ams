@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>CodePen - Random Login Form</title>
+
+ <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+{%block body%}
+<body>
+
+  <div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>nyala<span>zone</span></div>
+		</div>
+		<br>
+  <form method="POST" action="">
+	  <div class="login">
+
+				<input type="text" placeholder="username" class="tname" name="username" value="{{request.form.username}}"><br>
+				<input type="password" placeholder="password" name="password" value="{{request.form.password}}"><br>
+				<input type="submit" value="Login">
+	  </div>
+
+
+ </form>
+
+
+
+</body>
+{% endblock %}
+</html>

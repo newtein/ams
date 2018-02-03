@@ -1,0 +1,588 @@
+{% include "navbar.html" %}
+
+<!--JQuery UI -->
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- Bootstrap Validator -->
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+
+ <div class="container col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-2" style="background-color: #A1CAF1;padding:20px;">
+         <form class="well form-horizontal" action="insert_newemployee.php" method="post"  id="contact_form" style="background-color:#FFFFFF;">
+            <fieldset style="background-color:#FFFFFF;">
+               <!-- Form Name -->
+               <legend> &nbsp; &nbsp;Register New Employee!</legend>
+                    <!-- Text input-->
+               <div class="form-group">
+                  <label class="col-md-4 control-label" >Employee ID</label>
+                  <div class="col-md-5 inputGroupContainer">
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
+                        <input name="empid" placeholder="Employee ID" class="form-control" type="text" value="">
+                     </div>
+                  </div>
+               </div>
+
+
+               <!-- Text input-->
+               <div class="form-group">
+                  <label class="col-md-4 control-label">Full Name</label>
+                  <div class="col-md-5 inputGroupContainer">
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input  name="full_name" placeholder="Full Name" class="form-control"  type="text">
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Text input-->
+               <div class="form-group">
+                  <label class="col-md-4 control-label">E-Mail</label>
+                  <div class="col-md-5 inputGroupContainer">
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+                     </div>
+                  </div>
+               </div>
+               <!-- Text input-->
+               <div class="form-group">
+                  <label class="col-md-4 control-label">Phone #</label>
+                  <div class="col-md-5 inputGroupContainer">
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input name="phone" placeholder="(845)555-1212" class="form-control" type="text">
+                     </div>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="col-md-4 control-label">Emergency Phone </label>
+                  <div class="col-md-5 inputGroupContainer">
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                        </span>
+                        <input name="ephone" placeholder="(845)555-1212" class="form-control" type="text">
+                     </div>
+                  </div>
+               </div>
+
+               <!--DOB -->
+               <div class="form-group">
+                  <label class="col-md-4 control-label">Date of Birth</label>
+                  <div class="col-md-5 inputGroupContainer">
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i>
+                        </span>
+                        <input  name="dob" placeholder="DD/MM/YYYY" class="form-control"  type="text" id="dobpicker"/>
+                     </div>
+                  </div>
+               </div>
+
+
+                <!-- Previlleges -->
+               <div class="form-group">
+                  <label class="col-md-4 control-label"> Privilege</label>
+                  <div class="col-md-5 inputGroupContainer">
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                        <select class="form-control selectpicker" name="privel">
+                           <option value="EMP"> Employee</option>
+                           <option value="HR"> HR</option>
+                           <option value="ADMIN"> Admin</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Designation -->
+               <div class="form-group">
+                  <label class="col-md-4 control-label">Designation </label>
+                  <div class="col-md-5 inputGroupContainer">
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-users" aria-hidden="true"></i>
+                        </span>
+                        <input  name="designation" placeholder="Designation.." class="form-control"  type="text">
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Blood Group -->
+               <div class="form-group">
+                  <label class="col-md-4 control-label">Blood Group </label>
+                  <div class="col-md-5 inputGroupContainer">
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-medkit" aria-hidden="true"></i>
+                        </span>
+                        <input  name="blood_group" placeholder="Blood Group" class="form-control"  type="text">
+                     </div>
+                  </div>
+               </div>
+
+               <!--joining -->
+               <div class="form-group">
+                  <label class="col-md-4 control-label">Date of Joining</label>
+                  <div class="col-md-5 inputGroupContainer">
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i>
+                        </span>
+                        <input  name="joining" placeholder="DD/MM/YYYY" class="form-control"  type="text" id="joinpicker">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="form-group">
+                  <label class="col-md-4 control-label"> Current Address</label>
+                  <div class="col-md-5 inputGroupContainer">
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input name="cur_address" placeholder="Current Address" class="form-control" type="text">
+                     </div>
+                  </div>
+               </div>
+               <!-- Text input-->
+               <div class="form-group">
+                  <label class="col-md-4 control-label">City</label>
+                  <div class="col-md-5 inputGroupContainer">
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input name="cur_city" placeholder="city" class="form-control"  type="text">
+                     </div>
+                  </div>
+               </div>
+               <!-- Select Basic -->
+               <div class="form-group">
+                  <label class="col-md-4 control-label">State</label>
+                  <div class="col-md-5 selectContainer">
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select name="cur_state" class="form-control selectpicker">
+                           <option value=" " >Please select your state</option>
+                           <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                           <option value="Andhra Pradesh">Andhra Pradesh</option>
+                           <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                           <option value="Assam">Assam</option>
+                           <option value="Bihar">Bihar</option>
+                           <option value="Chandigarh">Chandigarh</option>
+                           <option value="Chhattisgarh">Chhattisgarh</option>
+                           <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                           <option value="Daman and Diu">Daman and Diu</option>
+                           <option value="Delhi">Delhi</option>
+                           <option value="Goa">Goa</option>
+                           <option value="Gujarat">Gujarat</option>
+                           <option value="Haryana">Haryana</option>
+                           <option value="Himachal Pradesh">Himachal Pradesh</option>
+                           <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                           <option value="Jharkhand">Jharkhand</option>
+                           <option value="Karnataka">Karnataka</option>
+                           <option value="Kerala">Kerala</option>
+                           <option value="Lakshadweep">Lakshadweep</option>
+                           <option value="Madhya Pradesh">Madhya Pradesh</option>
+                           <option value="Maharashtra">Maharashtra</option>
+                           <option value="Manipur">Manipur</option>
+                           <option value="Meghalaya">Meghalaya</option>
+                           <option value="Mizoram">Mizoram</option>
+                           <option value="Nagaland">Nagaland</option>
+                           <option value="Orissa">Orissa</option>
+                           <option value="Pondicherry">Pondicherry</option>
+                           <option value="Punjab">Punjab</option>
+                           <option value="Rajasthan">Rajasthan</option>
+                           <option value="Sikkim">Sikkim</option>
+                           <option value="Tamil Nadu">Tamil Nadu</option>
+                           <option value="Tripura">Tripura</option>
+                           <option value="Uttaranchal">Uttaranchal</option>
+                           <option value="Uttar Pradesh">Uttar Pradesh</option>
+                           <option value="West Bengal">West Bengal</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+
+
+
+               <!-- Text area -->
+               <!-- Success message -->
+               <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Employee details added successfully.</div>
+               <!-- Button -->
+               <div class="form-group">
+                  <label class="col-md-4 control-label"></label>
+                  <div class="col-md-4">
+                     <button type="submit" class="btn btn-primary" >Send <span class="glyphicon glyphicon-send"></span></button>
+                  </div>
+               </div>
+            </fieldset>
+         </form>
+      </div>
+
+<script>
+      $("#success_message").hide();
+      $( function() {
+        $( "#dobpicker" ).datepicker({
+          changeMonth: true,
+          changeYear: true,
+          dateFormat:'dd/mm/yy'
+        });
+      } );
+
+        $( function() {
+        $( "#joinpicker" ).datepicker(
+            {
+              dateFormat:'dd/mm/yy',
+              changeMonth:true
+            }
+          );
+      } );
+       var nospecial_nodot=/^[^*|\":<>[\]{}`\\()';@&$]+$/;
+       var nospecial_dot=/^[^*|\":<>[\]{}`\\()'.;@&$]+$/;
+       var all_int=/^\d+$/;
+
+      $(document).ready(function() {
+          $('#contact_form').bootstrapValidator({
+              // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+              feedbackIcons: {
+                  valid: 'glyphicon glyphicon-ok',
+                  invalid: 'glyphicon glyphicon-remove',
+                  validating: 'glyphicon glyphicon-refresh'
+              },
+              fields: {
+                  full_name: {
+                      validators: {
+                              stringLength: {
+                              min: 2,
+                          },
+                              notEmpty: {
+                              message: 'Please supply your Full Name'
+                          },
+                          regexp:{
+                            regexp:nospecial_nodot,
+                            message:'Field should contain no special character.'
+                          }
+                      }
+                  },
+                   father_name: {
+                      validators: {
+
+                          regexp:{
+                            regexp:nospecial_nodot,
+                            message:'Field should contain no special character.'
+                          }
+                      }
+                  },
+                  spouse_name: {
+                      validators: {
+
+                          regexp:{
+                            regexp:nospecial_nodot,
+                            message:'Field should contain no special character.'
+                          }
+                      }
+                  },
+                   empid: {
+                      validators: {
+                           stringLength: {
+                              min: 2,
+                          },
+                          notEmpty: {
+                              message: 'Please supply Employee ID'
+                          }
+                      }
+                  },
+                  department:{
+                      validators:{
+                        notEmpty:{
+                          message:'Department is required.'
+                        }
+                      }
+                  },
+                  blood_group:{
+                      validators:{
+                        stringLength:{
+                          max:3,
+                          message:'Blood Group should not contain more than 3 characters'
+                        }
+                      }
+                  },
+                  email: {
+                      validators: {
+                          notEmpty: {
+                              message: 'Please supply your email address'
+                          },
+                          emailAddress: {
+                              message: 'Please supply a valid email address'
+                          }
+                      }
+                  },
+                  phone: {
+                      validators: {
+                          notEmpty: {
+                              message: 'Please supply your phone number'
+                          },
+                          stringLength: {
+                              min:10,
+                              max:10,
+                              message: 'Please supply a vaild phone'
+                          },
+                          regexp:{
+                            regexp:nospecial_dot,
+                            message:'Field should contain no special character.'
+                          },
+                          regexp:{
+                            regexp:all_int,
+                            message:'Should contain Intergers only'
+                          }
+                      }
+                  },
+                  ephone: {
+                      validators: {
+                          notEmpty: {
+                              message: 'Please supply your Emergency phone number'
+                          },
+                          stringLength: {
+                              min:10,
+                              max:10,
+                              message: 'Please supply a vaild phone'
+                          },
+                          regexp:{
+                            regexp:nospecial_dot,
+                            message:'Field should contain no special character.'
+                          },
+                          regexp:{
+                            regexp:all_int,
+                            message:'Should contain Intergers only'
+                          }
+                      }
+                  },
+                  dob:{
+                    validators:{
+                       notEmpty:{
+                        message:"DOB is required"
+                       },
+                       date:{
+                        format:'DD/MM/YYYY',
+                        message:'Invalid DOB'
+                       }
+                    }
+                  },
+                    joining:{
+                    validators:{
+                       notEmpty:{
+                        message:"Date of Joining is required"
+                       },
+                       date:{
+                        format:'DD/MM/YYYY',
+                        message:'Invalid Date'
+                       }
+                    }
+                  },
+                  pan:{
+                    validators:{
+                       notEmpty:{
+                            message:'PAN Card is required.'
+                          },
+                       stringLength:{
+                        min:10,
+                        max:10,
+                        message:'PAN Number should be of 10 alphanumeric characters'
+                       },
+                       regexp:{
+                        regexp:nospecial_dot,
+                        message:'PAN Number should contain no special characters'
+                       }
+
+
+                    }
+                  },
+                     aadhar:{
+                    validators:{
+
+                       stringLength:{
+                        min:12,
+                        max:12,
+                        message:'Aadhar Number should be of 12 digits'
+                       },
+                       regexp:{
+                        regexp:nospecial_dot,
+                        message:'Aadhar Number should contain no special characters'
+                       },
+                          regexp:{
+                            regexp:all_int,
+                            message:'Should contain Intergers only'
+                          }
+
+                    }
+                  },
+                    voter:{
+                    validators:{
+                       stringLength:{
+                        min:12,
+                        max:12,
+                        message:'Aadhar Number should be of 12 digits'
+                       },
+                       regexp:{
+                        regexp:nospecial_dot,
+                        message:'Aadhar Number should contain no special characters'
+                       },
+                          regexp:{
+                            regexp:all_int,
+                            message:'Should contain Intergers only'
+                          }
+
+                    }
+                  },
+                  salary:{
+                    validators:{
+                          notEmpty:{
+                            message:'Enter salary.'
+                          },
+                          regexp:{
+                            regexp:all_int,
+                            message:'Should contain Intergers only'
+                          }
+                    }
+                  },
+                  cur_address: {
+                      validators: {
+                           stringLength: {
+                              min: 4,
+                          },
+                          notEmpty: {
+                              message: 'Please supply your street address'
+                          },
+                          regexp:{
+                            regexp:nospecial_nodot,
+                            message:'Field should contain no special character.'
+                          }
+                      }
+                  },
+                  cur_city: {
+                      validators: {
+                           stringLength: {
+                              min: 4,
+                          },
+                          notEmpty: {
+                              message: 'Please supply your city'
+                          },
+                          regexp:{
+                            regexp:nospecial_dot,
+                            message:'Field should contain no special character.'
+                          }
+                      }
+                  },
+                  cur_state: {
+                      validators: {
+                          notEmpty: {
+                              message: 'Please select your state'
+                          }
+
+                      }
+                  },
+                  cur_pin: {
+                      validators: {
+                          notEmpty: {
+                              message: 'Please supply your zip code'
+                          },
+                          stringLength: {
+                             min:6,
+                             max:6,
+                             message:'Should contain 6 Intergers only'
+
+                          }
+                          ,
+                          regexp:{
+                            regexp:all_int
+                          }
+                      }
+                  },
+                   per_address: {
+                      validators: {
+                           stringLength: {
+                              min: 4,
+                          },
+                          notEmpty: {
+                              message: 'Please supply your street address'
+                          },
+                          regexp:{
+                            regexp:nospecial_nodot,
+                            message:'Field should contain no special character.'
+                          }
+                      }
+                  },
+                  per_city: {
+                      validators: {
+                           stringLength: {
+                              min: 4,
+                          },
+                          notEmpty: {
+                              message: 'Please supply your city'
+                          },
+                          regexp:{
+                            regexp:nospecial_dot,
+                            message:'Field should contain no special character.'
+                          }
+                      }
+                  },
+                  per_state: {
+                      validators: {
+                          notEmpty: {
+                              message: 'Please select your state'
+                          }
+
+                      }
+                  },
+                  per_pin: {
+                      validators: {
+                          notEmpty: {
+                              message: 'Please supply your pin code'
+                          },
+                          stringLength: {
+                             min:6,
+                             max:6,
+                             message:'Should contain 6 Intergers only'
+
+                          },
+                          regexp:{
+                            regexp:all_int
+                          }
+                      }
+                  },
+                  comment: {
+                      validators: {
+                            stringLength: {
+                              min: 10,
+                              max: 200,
+                              message:'Please enter at least 10 characters and no more than 200'
+                          },
+                          notEmpty: {
+                              message: 'Please supply a description of your project'
+                          }
+                          }
+                      }
+                  }
+              })
+              .on('submit', function(e) {
+                  $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
+                      $('#contact_form').data('bootstrapValidator').resetForm();
+
+                  // Prevent form submission
+                  e.preventDefault();
+
+                  // Get the form instance
+                  var $form = $(e.target);
+
+                  // Get the BootstrapValidator instance
+                  var bv = $form.data('bootstrapValidator');
+
+                 console.log($form.serialize());
+                 var data = JSON.stringify( $(form).serializeArray() );
+
+                  console.log( data );
+
+                  // Use Ajax to submit form data
+                  $.post($form.attr('action'), $form.serialize(), function(result) {
+                      console.log(result);
+                  }, 'json');
+              });
+      });
+
+</script>

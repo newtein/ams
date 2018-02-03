@@ -1,0 +1,38 @@
+{%include "navbar.html"%}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<div class="container" style="background-color: #FFFFFF;padding:20px;border-style: solid;border-width:10px;border-color:#A1CAF1;">
+
+
+    <input type="text" id="pickit" class="form-control">
+
+    <br>
+    <center>
+
+    <button type="button" class="btn btn-primary">Leave </button>
+
+    <button type="button" class="btn btn-primary"> Optional Holiday </button>
+
+    <button type="button" class="btn btn-primary">Work from home </button>
+
+        </center>
+
+
+
+
+</div>
+
+
+<script>
+ $( function() {
+    $( "#pickit" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+
+      dateFormat:'yy-mm-dd'
+    });
+  } );
+
+</script>

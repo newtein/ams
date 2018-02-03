@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.01 scan initiated Fri Jul 21 17:42:53 2017 as: nmap -sP -oX 21072017.xml 192.168.54.0/24 -->
+<nmaprun scanner="nmap" args="nmap -sP -oX 21072017.xml 192.168.54.0/24" start="1500639173" startstr="Fri Jul 21 17:42:53 2017" version="7.01" xmloutputversion="1.04">
+<verbose level="0"/>
+<debugging level="0"/>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.54.2" addrtype="ipv4"/>
+<address addr="C0:EE:FB:DC:E8:07" addrtype="mac" vendor="OnePlus Tech (Shenzhen)"/>
+<hostnames>
+</hostnames>
+<times srtt="95074" rttvar="95074" to="475370"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.54.3" addrtype="ipv4"/>
+<address addr="3C:A9:F4:5A:B7:8C" addrtype="mac" vendor="Intel Corporate"/>
+<hostnames>
+</hostnames>
+<times srtt="95476" rttvar="95476" to="477380"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.54.5" addrtype="ipv4"/>
+<address addr="DC:1A:C5:0C:E8:96" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="98217" rttvar="98217" to="491085"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.54.6" addrtype="ipv4"/>
+<address addr="24:24:0E:3D:CD:A0" addrtype="mac" vendor="Apple"/>
+<hostnames>
+</hostnames>
+<times srtt="81000" rttvar="81000" to="405000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.54.8" addrtype="ipv4"/>
+<address addr="48:D2:24:88:53:C9" addrtype="mac" vendor="Liteon Technology"/>
+<hostnames>
+</hostnames>
+<times srtt="99002" rttvar="99002" to="495010"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.54.9" addrtype="ipv4"/>
+<address addr="98:10:E8:7E:3F:3E" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="96445" rttvar="96445" to="482225"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.54.12" addrtype="ipv4"/>
+<address addr="3C:A9:F4:5A:B6:E0" addrtype="mac" vendor="Intel Corporate"/>
+<hostnames>
+</hostnames>
+<times srtt="73385" rttvar="73385" to="366925"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.54.15" addrtype="ipv4"/>
+<address addr="00:19:BB:EA:6E:65" addrtype="mac" vendor="Hewlett Packard"/>
+<hostnames>
+</hostnames>
+<times srtt="5781" rttvar="6180" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.54.254" addrtype="ipv4"/>
+<address addr="E4:6F:13:AB:0C:F1" addrtype="mac" vendor="D-Link International"/>
+<hostnames>
+</hostnames>
+<times srtt="5494" rttvar="5494" to="100000"/>
+</host>
+<host><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="192.168.54.13" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</host>
+<runstats><finished time="1500639180" timestr="Fri Jul 21 17:43:00 2017" elapsed="7.37" summary="Nmap done at Fri Jul 21 17:43:00 2017; 256 IP addresses (10 hosts up) scanned in 7.37 seconds" exit="success"/><hosts up="10" down="246" total="256"/>
+</runstats>
+</nmaprun>

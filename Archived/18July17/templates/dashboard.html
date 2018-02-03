@@ -1,0 +1,83 @@
+<head>
+ {% include "navbar.html" %}
+
+
+</head>
+
+
+
+<div class="alert alert-info col-md-6 col-md-offset-3">
+     <center>
+           {%if date|length>0 and time|length>0%}
+           Your attendence is successfully locked at {{date}} {{time}}
+           {%elif date=="" or  time==""%}
+           Your walkin attendence is already recorded
+           {%else%}
+            Your walkin attendence is already recorded
+           {%endif%}
+
+     </center>
+</div>
+
+{% if data_t[2]!='confirm' and data_t[2]%}
+<div class="alert alert-success col-md-6 col-md-offset-3">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+     <center>
+          {{data_t[2]}}
+     </center>
+</div>
+{%endif%}
+
+{%if data_t[3]%}
+         {% include "emp_view.html" %}
+{%endif%}
+
+
+{%if data_t[2]=="confirm"%}
+
+<script>
+
+
+    $(document).ready(function(){
+
+      $('#myModal').modal('show');
+
+    });
+
+</script>
+
+
+
+{%endif%}
+
+<div id='myModal' class="modal fade" role="dialog">
+   <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Confirm</h4>
+         </div>
+
+         <div class="modal-body" style="text-align:center;">
+           Walkin and Walkout time is already recorded in the system for given range to you want to overwrite them?
+
+
+         </div>
+          <div class="modal-footer">
+               <form method="POST" action="">
+                   <input type="hidden" name="td1" value="{{td1}}">
+                   <input type="hidden" name="td2" value="{{td2}}">
+               <input type="submit" name="yes" class="btn btn-primary pull-right" value="Yes">
+               <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+              </form>
+          </div>
+      </div>
+   </div>
+</div>
+
+
+
+
+
+

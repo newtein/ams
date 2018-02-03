@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.01 scan initiated Wed Jul 19 20:55:58 2017 as: nmap -sP -oX 19072017.xml 192.168.54.0/24 -->
+<nmaprun scanner="nmap" args="nmap -sP -oX 19072017.xml 192.168.54.0/24" start="1500477958" startstr="Wed Jul 19 20:55:58 2017" version="7.01" xmloutputversion="1.04">
+<verbose level="0"/>
+<debugging level="0"/>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.54.5" addrtype="ipv4"/>
+<address addr="C0:EE:FB:52:DB:16" addrtype="mac" vendor="OnePlus Tech (Shenzhen)"/>
+<hostnames>
+</hostnames>
+<times srtt="182239" rttvar="182239" to="911195"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.54.7" addrtype="ipv4"/>
+<address addr="DC:1A:C5:0C:E8:96" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="188869" rttvar="188869" to="944345"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.54.8" addrtype="ipv4"/>
+<address addr="48:D2:24:88:53:C9" addrtype="mac" vendor="Liteon Technology"/>
+<hostnames>
+</hostnames>
+<times srtt="300816" rttvar="320329" to="1582132"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.54.12" addrtype="ipv4"/>
+<address addr="3C:A9:F4:5A:B6:E0" addrtype="mac" vendor="Intel Corporate"/>
+<hostnames>
+</hostnames>
+<times srtt="269737" rttvar="198125" to="1062237"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.54.15" addrtype="ipv4"/>
+<address addr="00:19:BB:EA:6E:65" addrtype="mac" vendor="Hewlett Packard"/>
+<hostnames>
+</hostnames>
+<times srtt="30039" rttvar="30039" to="150195"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.54.254" addrtype="ipv4"/>
+<address addr="E4:6F:13:AB:0C:F1" addrtype="mac" vendor="D-Link International"/>
+<hostnames>
+</hostnames>
+<times srtt="30922" rttvar="30922" to="154610"/>
+</host>
+<host><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="192.168.54.13" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</host>
+<runstats><finished time="1500477987" timestr="Wed Jul 19 20:56:27 2017" elapsed="29.62" summary="Nmap done at Wed Jul 19 20:56:27 2017; 256 IP addresses (7 hosts up) scanned in 29.62 seconds" exit="success"/><hosts up="7" down="249" total="256"/>
+</runstats>
+</nmaprun>
