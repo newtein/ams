@@ -2,7 +2,7 @@
 
 This Flask-based Web Application is implemented during my internship at Nyalazone Solutions Pvt Ltd @ http://www.nyalazone.com/
 
-## Illustrated Readme with Snapshots of implemented Flask-based Web Application
+### Illustrated Readme with Snapshots of implemented Flask-based Web Application
 
 Automated AMS aims to automatically log the attendance from Network using Mac Address collected by Nmap (alzo.py). Database roles & privileges in PostgreSQL (3NF) is configured for Admin, HR & Employees of the company.
 
