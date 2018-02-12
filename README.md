@@ -6,7 +6,7 @@ This Flask-based Web Application is implemented during my internship at Nyalazon
 
 Automated AMS aims to automatically log the attendance from Network using Mac Address collected by Nmap (alzo.py). Database roles & privileges in PostgreSQL (3NF) is configured for Admin, HR & Employees of the company.
 
-Additionally, Web module is designed to view and manage attendace with two types of priveleges namely Admin/HR (AHR)and Employees (E).
+Additionally, a Web-application is designed to view and manage attendance with two types of priveleges namely Admin/HR (AHR)and Employees (E).
 
 # Tools/Technologies Used:
 Python, Flask, Jinja, PostgreSQL, Javascript, Bootstrap, JQuery, CSS
