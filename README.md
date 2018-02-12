@@ -23,13 +23,16 @@ alzo.py with the aid of active fingerprinting of Network using Nmap
 ![alt text](https://raw.githubusercontent.com/newtein/ams/master/UI_Images/FireShot%20Capture%20010%20-%20AlZo%20-%20http___localhost_5000_.png)
 
 ### View Personal Attendance (AHR, E)
+![alt text](https://raw.githubusercontent.com/newtein/ams/master/UI_Images/FireShot%20Capture%20003%20-%20AlZo%20-%20http___localhost_5000_view.png)
 ![alt text](https://raw.githubusercontent.com/newtein/ams/master/UI_Images/FireShot%20Capture%20004%20-%20AlZo%20-%20http___localhost_5000_view.png)
 ### View Peer Attendance (AHR)
 ![alt text](https://raw.githubusercontent.com/newtein/ams/master/UI_Images/FireShot%20Capture%20002%20-%20AlZo%20-%20http___localhost_5000_admin_att.png)
 ### Edit Attendance (AHR)
-![alt text](https://raw.githubusercontent.com/newtein/ams/master/UI_Images/FireShot%20Capture%20005%20-%20AlZo%20-%20http___localhost_5000_view.png)
+![alt text](https://raw.githubusercontent.com/newtein/ams/master/UI_Images/FireShot%20Capture%20007%20-%20AlZo%20-%20http___localhost_5000_.png)
+
 ![alt text](https://raw.githubusercontent.com/newtein/ams/master/UI_Images/FireShot%20Capture%20006%20-%20AlZo%20-%20http___localhost_5000_.png)
-### Apply for leave (AHR, E)
+### Apply for Leave, Optional Holiday or Work from home:  (AHR, E)
+![alt text](https://raw.githubusercontent.com/newtein/ams/master/UI_Images/FireShot%20Capture%20005%20-%20AlZo%20-%20http___localhost_5000_view.png)
 ### Edit MacAddress (AHR)
 ### Enable-Disable Employees (AHR)
 ### Register New Employee (AHR)
@@ -43,8 +46,8 @@ alzo.py with the aid of active fingerprinting of Network using Nmap
 
 
 
-![alt text](https://raw.githubusercontent.com/newtein/ams/master/UI_Images/FireShot%20Capture%20007%20-%20AlZo%20-%20http___localhost_5000_.png)
-![alt text](https://raw.githubusercontent.com/newtein/ams/master/UI_Images/FireShot%20Capture%20003%20-%20AlZo%20-%20http___localhost_5000_view.png)
+
+
 
 
  
