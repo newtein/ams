@@ -1,5 +1,8 @@
 # Automated Attendance Management System
+
 This Flask-based Web Application is implemented during my internship at Nyalazone Solutions Pvt Ltd @ http://www.nyalazone.com/
+
+#### Illustrated Readme with Snapshots of implemented Flask-based Web Application
 
 Automated AMS aims to automatically log the attendance from Network using Mac Address collected by Nmap (alzo.py). Database roles & privileges in PostgreSQL (3NF) is configured for Admin, HR & Employees of the company.
 
@@ -34,7 +37,11 @@ alzo.py with the aid of active fingerprinting of Network using Nmap
 ### Apply for Leave, Optional Holiday or Work from home:  (AHR, E)
 ![alt text](https://raw.githubusercontent.com/newtein/ams/master/UI_Images/FireShot%20Capture%20005%20-%20AlZo%20-%20http___localhost_5000_view.png)
 ### Edit MacAddress (AHR)
+![alt text](https://raw.githubusercontent.com/newtein/ams/master/UI_Images/FireShot%20Capture%20013%20-%20AlZo%20-%20http___localhost_5000_.png)
+
+
 ### Enable-Disable Employees (AHR)
+![alt text](https://raw.githubusercontent.com/newtein/ams/master/UI_Images/FireShot%20Capture%20012%20-%20AlZo%20-%20http___localhost_5000_.png)
 ### Register New Employee (AHR)
 
 ![alt text](https://raw.githubusercontent.com/newtein/ams/master/UI_Images/FireShot%20Capture%20008%20-%20AlZo%20-%20http___localhost_5000_newemployee.png)
